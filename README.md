@@ -13,4 +13,4 @@ This will hopefully become a portfolio website for me, David, but is also very m
 
 ## Requirements
 
-- Make sure the site follows WCAG-guidelines
+- Make sure the site follows WCAG
