@@ -1,9 +1,81 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../public/montserrat/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../public/montserrat/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../public/montserrat/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../public/montserrat/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../public/montserrat/Montserrat-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+:root {
+  /* https://mycolor.space/?hex=%23DFD2B9&sub=1 */
+
+  /* --bg-color: #f3eee4; */
+  --bg-color: #dfd2b9;
+  --text-black: #1c2334;
+  --text-red: #c01450;
+
+  --dark-blue: #2f4858;
+  --lighter-blue: #41656c;
+  --brown-yellow: #ae8d18;
+  --greenish: #849d8c;
+
+  --portfolio-projects: var(--greenish);
+  --portfolio-skills: var(--greenish);
+  --portfolio-experience: var(--greenish);
+  --portfolio-education: var(--greenish);
+
+  --header-gradient: linear-gradient(var(--dark-blue), var(--lighter-blue));
+  --footer-gradient: linear-gradient(var(--dark-blue), var(--lighter-blue));
+}
+
 html,
 body {
+  color: var(--text-black);
+  background-color: var(--bg-color);
+  background-image: url("../public/layered-waves-top.svg");
+  background-size: cover;
+
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    background-image: url("../public/layered-waves-top.svg"),
+      url("../public/layered-waves-bottom.svg");
+    background-size: cover;
+  }
 }
 
 a {
@@ -13,4 +85,47 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: min(2.1rem, 6vw);
+}
+h2 {
+  font-size: min(1.7rem, 4.5vw);
+}
+h3 {
+  font-size: min(1.3rem, 4vw);
+}
+h4 {
+  font-size: min(1rem, 3.7vw);
+}
+
+html,
+body,
+#__next,
+#root {
+  width: 100vw;
+  width: -webkit-fill-available;
+  height: 100vh;
+  height: -webkit-fill-available;
+  height: -moz-fill-available;
+  height: -fill-available;
+}
+
+#root,
+#__next {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas:
+    "app-header app-header"
+    "app-sidebar app-main"
+    "app-sidebar app-footer";
 }
