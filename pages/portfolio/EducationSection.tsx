@@ -27,9 +27,6 @@ const Item = styled.li`
     "header"
     "subheader";
 
-  padding-bottom: 3vw;
-  padding-top: 3vw;
-
   &:not(:first-child) {
     border-top: 1px solid black;
   }
@@ -62,7 +59,7 @@ export const EducationSection = (props: Props) => {
     <PortfolioSection
       title="Education"
       titleColor="#849d8c"
-      background="#849d8c80"
+      background="#849d8c60"
       index={2}
     >
       <Item>

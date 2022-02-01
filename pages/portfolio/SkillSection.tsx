@@ -11,7 +11,7 @@ export const SkillSection = (props: Props) => {
     <PortfolioSection
       title="Skills"
       titleColor="#c01450"
-      background="#c01450bb"
+      background="#c0145060"
       index={1}
     >
       Write about your skills here baby

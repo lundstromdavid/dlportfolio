@@ -62,8 +62,6 @@ export const AppLink: React.FC<Props> = (props) => {
             scale: 1.1,
           }}
           animate={{
-            // Framer complains when animating font weight
-            //fontWeight: isCurrent() ? "600" : "400",
             opacity: isCurrentOrExternal() ? 1 : 0.6,
           }}
           whileTap={{ scale: 0.75 }}

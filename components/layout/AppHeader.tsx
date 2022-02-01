@@ -13,6 +13,7 @@ const Root = styled(motion.header)`
   width: 100%;
   height: clamp(80px, 18vw, 210px);
   padding: 1vw;
+  padding-right: 28vw;
 
   @media screen and (max-width: 1200px) {
     background: var(--dark-blue);

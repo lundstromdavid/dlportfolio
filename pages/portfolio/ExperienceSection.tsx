@@ -11,7 +11,7 @@ export const ExperienceSection = (props: Props) => {
     <PortfolioSection
       title="Experience"
       titleColor="#41656c"
-      background="#41656c80"
+      background="#41656c60"
       index={0}
     >
       Write about your exprience here love
