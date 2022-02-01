@@ -115,20 +115,22 @@ body,
 #root {
   width: 100vw;
   width: -webkit-fill-available;
+  width: -moz-available;
+  width: stretch;
   height: 100vh;
   height: -webkit-fill-available;
-  height: -moz-fill-available;
-  height: -fill-available;
+  height: -moz-available;
+  height: stretch;
 }
 
 #root,
 #__next {
   display: grid;
   grid-template-rows: minmax(0, 1fr) auto;
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) auto;
   grid-template-areas:
-    "app-main"
-    "app-footer";
+    "app-main app-sidebar "
+    "app-footer app-sidebar ";
 }
 
 @media screen and (min-width: 1200px) {
@@ -136,8 +138,8 @@ body,
   #__next {
     grid-template-rows: auto minmax(0, 1fr) auto;
     grid-template-areas:
-      "app-header"
-      "app-main"
-      "app-footer";
+      "app-header app-sidebar"
+      "app-main app-sidebar"
+      "app-footer app-sidebar";
   }
 }

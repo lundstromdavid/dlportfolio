@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
 
@@ -8,6 +9,10 @@ const Root = styled(motion.main)`
   width: 100%;
   height: 100%;
   overflow-y: auto;
+
+  /* @media screen and (orientation: landscape) and (max-width: 1200px) {
+    height: 90%;
+  } */
 `;
 
 interface Props {
@@ -16,9 +21,9 @@ interface Props {
 
 export const AppMain: React.FC<Props> = (props) => {
   const variants = {
-    hidden: { opacity: 0, x: -200, y: 0 },
-    enter: { opacity: 1, x: 0, y: 0 },
-    exit: { opacity: 0, x: 0, y: 0 },
+    hidden: { opacity: 0 },
+    enter: { opacity: 1 },
+    exit: { opacity: 0 },
   };
 
   return (
@@ -28,6 +33,10 @@ export const AppMain: React.FC<Props> = (props) => {
       initial="hidden"
       animate="enter"
       exit="exit"
+      transition={{
+        type: "tween",
+        duration: 0.3,
+      }}
     >
       {props.children}
     </Root>

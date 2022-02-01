@@ -4,8 +4,6 @@ import { Screen } from "../media/Screen";
 export function useScreenSize(): Screen {
   const [screen, setScreen] = useState<Screen>(Screen.current());
 
-  console.log("useScreenSize()");
-
   useEffect(() => {
     window.addEventListener("resize", onResize);
 
@@ -14,9 +12,7 @@ export function useScreenSize(): Screen {
 
   function onResize() {
     const current = Screen.current();
-    console.log("onResize");
     if (screen !== current) {
-      console.log("Updating screen to: " + current);
       setScreen(current);
     }
   }

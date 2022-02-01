@@ -1,35 +1,36 @@
 import React from "react";
 import styled from "styled-components";
-import { Screen } from "../../media/Screen";
 import { AppNav } from "./AppNav";
 
-const Root = styled.footer`
-  grid-area: app-footer;
+const Root = styled.aside`
+  grid-area: app-sidebar;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  width: 100%;
-  height: min(18vw, 80px);
+  width: min(18vw, 80px);
+  height: 100%;
   padding: 2vw;
 
   color: white;
   background-image: var(--footer-gradient);
 
-  @media screen and (min-width: 1200px) {
-    background-image: none;
-  }
+  background: var(--dark-blue);
+`;
+
+const StyledAppNav = styled(AppNav)`
+  flex-direction: column;
 `;
 
 interface Props {
   className?: string;
 }
 
-export const AppFooter = (props: Props) => {
+export const AppSidebar = (props: Props) => {
   return (
     <Root className={props.className}>
-      {Screen.current() !== Screen.bigScreen && <AppNav></AppNav>}
+      <StyledAppNav></StyledAppNav>
     </Root>
   );
 };
