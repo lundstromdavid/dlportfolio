@@ -6,12 +6,6 @@ interface Props {
   className?: string;
 }
 
-const StyledSection = styled(PortfolioSection)`
-  & > main {
-    background: #849d8caa;
-  }
-`;
-
 const Logo = styled.img`
   display: none;
 
@@ -48,12 +42,14 @@ const Item = styled.li`
   }
 `;
 
-const Header = styled.h3`
+const Heading = styled.h3`
   grid-area: header;
   margin-top: auto;
+  font-size: min(1.1rem, 3.5vw);
 `;
-const Subheader = styled.h4`
+const SubHeading = styled.h4`
   grid-area: subheader;
+  font-size: min(1rem, 3.2vw);
 `;
 const Time = styled.span`
   font-style: italic;
@@ -63,21 +59,26 @@ const Description = styled.p``;
 
 export const EducationSection = (props: Props) => {
   return (
-    <StyledSection title="Education">
+    <PortfolioSection
+      title="Education"
+      titleColor="#849d8c"
+      background="#849d8c80"
+      index={2}
+    >
       <Item>
         <Logo src="logo/coursera.png" width={150} height={150} />
-        <Header>Foundations of User Experience (UX) Design</Header>
-        <Subheader>
+        <Heading>Foundations of User Experience (UX) Design</Heading>
+        <SubHeading>
           coursera, <Time>2022 - present</Time>
-        </Subheader>
+        </SubHeading>
       </Item>
       <Item>
         <Logo src="logo/uu.png" width={150} height={150} />
-        <Header>Bachelor's Programme in Computer Science</Header>
-        <Subheader>
+        <Heading>Computer Science</Heading>
+        <SubHeading>
           Uppsala University, <Time>2020 - 2022</Time>
-        </Subheader>
+        </SubHeading>
       </Item>
-    </StyledSection>
+    </PortfolioSection>
   );
 };

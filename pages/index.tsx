@@ -1,34 +1,32 @@
-import Head from "next/head";
 import React from "react";
 import styled from "styled-components";
+import { Avatar } from "../components/Avatar";
+import { AppFooter } from "../components/layout/AppFooter";
 import { AppHeader } from "../components/layout/AppHeader";
 import { AppMain } from "../components/layout/AppMain";
 import { BrandLinks } from "../components/link/BrandLinks";
-import { VscSmiley } from "react-icons/vsc";
-import { AppFooter } from "../components/layout/AppFooter";
+import { useScreenSize } from "../hooks/MediaHooks";
+import { Screen } from "../media/Screen";
 
 const Main = styled(AppMain)`
   display: grid;
-  grid-template-rows: minmax(0, 0.6fr) minmax(0, 1fr);
+  grid-template-rows: 0.5fr auto minmax(0, 1fr);
   grid-template-columns: minmax(0, 1fr);
   grid-template-areas:
+    "avatar"
     "text-section"
     "brand-links";
 
   padding: 0;
 
-  background-image: url("man-under-tree.svg");
+  background-image: linear-gradient(#dfd2b9cc, #dfd2b9cc),
+    url("man-under-tree.svg");
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: 85%;
+  background-position: 50%;
 
+  gap: 1rem;
   overflow: auto;
-
-  & > * {
-    @media screen and (max-width: 1200px) {
-      background: #dfd2b9cc;
-    }
-  }
 
   @media screen and (min-width: 1200px) {
     grid-template-columns: 1fr 1fr;
@@ -60,13 +58,12 @@ const H2 = styled.h2`
 const Developer = styled.span`
   color: var(--text-red);
 `;
+const StyledAvatar = styled(Avatar)`
+  margin: auto auto 0 auto;
+`;
 
 const StyledBrandLinks = styled(BrandLinks)`
   align-items: flex-start;
-`;
-
-const Smiley = styled(VscSmiley)`
-  /* color: var(--brown-yellow); */
 `;
 
 interface Props {
@@ -74,19 +71,22 @@ interface Props {
 }
 
 export const Home = (props: Props) => {
+  const screen = useScreenSize();
+
   return (
     <>
-      <AppHeader>Test</AppHeader>
+      <AppHeader />
       <Main>
+        {/*  {screen !== Screen.bigScreen && <StyledAvatar />} */}
         <TextSection>
           <H1>Hi! I'm David,</H1>
           <H2>
             a freelancing <Developer>developer</Developer>
-            <Smiley size="30"></Smiley>
           </H2>
         </TextSection>
         <StyledBrandLinks></StyledBrandLinks>
       </Main>
+      <AppFooter></AppFooter>
     </>
   );
 };

@@ -27,6 +27,7 @@ const Item = styled.li``;
 
 const StyledLink = styled(AppLink)`
   color: var(--text-black);
+  flex-direction: row;
 `;
 
 interface Props extends HTMLMotionProps<"aside"> {

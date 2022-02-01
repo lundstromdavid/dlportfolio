@@ -1,9 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import { AppFooter } from "../../components/layout/AppFooter";
 import { AppHeader } from "../../components/layout/AppHeader";
 import { AppMain } from "../../components/layout/AppMain";
+import { useScreenSize } from "../../hooks/MediaHooks";
 import { EducationSection } from "./EducationSection";
-import { PortfolioTabs } from "./PortfolioTabs";
+import { ExperienceSection } from "./ExperienceSection";
+import { SkillSection } from "./SkillSection";
 
 export enum EPortfolioRoute {
   projects = "Projects",
@@ -35,24 +38,28 @@ const StyledMain = styled(AppMain)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 5vw;
+  padding: 2vw;
 
-  @media screen and (max-width: 1200px) {
-    padding-top: 10%;
+  @media screen and (min-width: 1200px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: flex-start;
   }
 `;
 
-const PortfolioSection = styled.section`
-  width: 100%;
-`;
-
 export const Portfolio = (props: Props) => {
+  const screen = useScreenSize();
+
   return (
     <>
       <AppHeader></AppHeader>
       <StyledMain>
-        <PortfolioTabs></PortfolioTabs>
-        <EducationSection></EducationSection>
+        <ExperienceSection />
+        <SkillSection />
+        <EducationSection />
       </StyledMain>
+      <AppFooter></AppFooter>
     </>
   );
 };

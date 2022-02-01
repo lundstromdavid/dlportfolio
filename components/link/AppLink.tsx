@@ -6,6 +6,7 @@ import Link from "next/link";
 
 const Root = styled(motion.a)`
   display: flex;
+  flex-direction: column;
   gap: 1rem;
   align-items: center;
 
@@ -40,20 +41,30 @@ export const AppLink: React.FC<Props> = (props) => {
 
   const { external, ...rest } = props;
 
+  const isCurrentOrExternal = () =>
+    props.external || router.pathname === props.href;
+
   return (
     <Wrapper>
       <Root
         {...rest}
+        initial={{
+          opacity: 0.6,
+        }}
         whileHover={{
           scale: 1.1,
           color: "var(--text-red)",
+          opacity: 1,
         }}
         whileFocus={{
           borderBottom: "1px solid var(--text-red)",
           scale: 1.1,
         }}
         animate={{
-          fontWeight: router.pathname === props.href ? "bold" : "normal",
+          // Framer complains when animating font weight
+          //fontWeight: isCurrent() ? "600" : "400",
+          // Cause the current link to "blink"
+          opacity: isCurrentOrExternal() ? 1 : 0.6,
         }}
         whileTap={{ scale: 0.75 }}
       >

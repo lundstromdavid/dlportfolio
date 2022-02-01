@@ -42,7 +42,9 @@
   --text-red: #c01450;
 
   --dark-blue: #2f4858;
+  --dark-blue-transparent: #2f4858dd;
   --lighter-blue: #41656c;
+  --lighter-blue-transparent: #41656cdd;
   --brown-yellow: #ae8d18;
   --greenish: #849d8c;
 
@@ -59,7 +61,7 @@ html,
 body {
   color: var(--text-black);
   background-color: var(--bg-color);
-  background-image: url("../public/layered-waves-top.svg");
+  /* background-image: url("../public/layered-waves-top.svg"); */
   background-size: cover;
 
   font-family: Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
@@ -122,10 +124,20 @@ body,
 #root,
 #__next {
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr) auto;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr);
   grid-template-areas:
-    "app-header app-header"
-    "app-sidebar app-main"
-    "app-sidebar app-footer";
+    "app-main"
+    "app-footer";
+}
+
+@media screen and (min-width: 1200px) {
+  #root,
+  #__next {
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      "app-header"
+      "app-main"
+      "app-footer";
+  }
 }
