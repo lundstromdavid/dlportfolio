@@ -29,7 +29,7 @@ interface Props extends HTMLMotionProps<"a"> {
 }
 
 export const AppLink: React.FC<Props> = (props) => {
-  const router = useRouter();
+  const { pathname } = useRouter();
 
   const Wrapper = ({ children }: { children: React.ReactElement }) => {
     if (props.external) {
@@ -41,8 +41,9 @@ export const AppLink: React.FC<Props> = (props) => {
 
   const { external, ...rest } = props;
 
-  const isCurrentOrExternal = () =>
-    props.external || router.pathname === props.href;
+  const isCurrent = () => pathname === props.href;
+
+  const isCurrentOrExternal = () => props.external || isCurrent();
 
   return (
     <AnimatePresence initial={false}>
@@ -60,9 +61,11 @@ export const AppLink: React.FC<Props> = (props) => {
           whileFocus={{
             borderBottom: "1px solid var(--text-red)",
             scale: 1.1,
+            color: "var(--text-red)",
           }}
           animate={{
             opacity: isCurrentOrExternal() ? 1 : 0.6,
+            color: isCurrent() && !props.external ? "var(--text-red)" : "",
           }}
           whileTap={{ scale: 0.75 }}
         >

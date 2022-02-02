@@ -10,7 +10,6 @@ const Logo = styled.img`
   display: none;
 
   grid-area: logo;
-  margin: 1rem;
   object-fit: contain;
 
   @media screen and (min-width: 1200px) {
@@ -26,6 +25,7 @@ const Item = styled.li`
   grid-template-areas:
     "header"
     "subheader";
+  padding: 0.5rem 0;
 
   &:not(:first-child) {
     border-top: 1px solid black;
@@ -42,11 +42,11 @@ const Item = styled.li`
 const Heading = styled.h3`
   grid-area: header;
   margin-top: auto;
-  font-size: min(1.1rem, 3.5vw);
+  font-size: min(1.1rem, 3.7vw);
 `;
 const SubHeading = styled.h4`
   grid-area: subheader;
-  font-size: min(1rem, 3.2vw);
+  font-size: min(1rem, 3.4vw);
 `;
 const Time = styled.span`
   font-style: italic;
