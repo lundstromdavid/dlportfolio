@@ -1,12 +1,12 @@
 import React from "react";
-import { AppTemplate } from "../../components/layout/AppTemplate";
+import { AppMain } from "../../components/layout/AppMain";
 
 interface Props {
   className?: string;
 }
 
 export const About = (props: Props) => {
-  return <AppTemplate>About</AppTemplate>;
+  return <AppMain>About</AppMain>;
 };
 
 export default About;

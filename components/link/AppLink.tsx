@@ -7,7 +7,7 @@ import Link from "next/link";
 const Root = styled(motion.a)`
   display: flex;
   flex-direction: column;
-  gap: 1vw;
+  gap: min(5vw, 1rem);
   align-items: center;
 
   margin: auto;
@@ -20,8 +20,6 @@ const Root = styled(motion.a)`
     outline: none;
   }
 `;
-
-const Text = styled.span``;
 
 interface Props extends HTMLMotionProps<"a"> {
   external?: boolean;

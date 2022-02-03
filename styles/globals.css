@@ -1,4 +1,6 @@
-@font-face {
+@import url("https://rsms.me/inter/inter.css");
+
+/* @font-face {
   font-family: "Montserrat";
   src: url("../public/montserrat/Montserrat-Regular.ttf") format("truetype");
   font-weight: normal;
@@ -31,7 +33,7 @@
   src: url("../public/montserrat/Montserrat-Black.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
-}
+} */
 
 :root {
   /* https://mycolor.space/?hex=%23DFD2B9&sub=1 */
@@ -64,13 +66,18 @@ body {
   /* background-image: url("../public/layered-waves-top.svg"); */
   background-size: cover;
 
-  font-family: Inter, Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI,
-    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-    sans-serif;
+  font-family: Inter, sans-serif;
 
   padding: 0;
   margin: 0;
   overflow: hidden;
+}
+
+@supports (font-variation-settings: normal) {
+  html,
+  body {
+    font-family: "Inter var", sans-serif;
+  }
 }
 
 @media screen and (min-width: 1200px) {

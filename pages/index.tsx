@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { AppTemplate } from "../components/layout/AppTemplate";
+import { AppMain } from "../components/layout/AppMain";
 import { BrandLinks } from "../components/link/BrandLinks";
 
-const Template = styled(AppTemplate)`
+const Main = styled(AppMain)`
   display: grid;
   grid-template-rows: minmax(0, 0.6fr) minmax(0, 1fr);
   grid-template-columns: minmax(0, 1fr);
@@ -63,7 +63,7 @@ interface Props {
 
 export const Home = (props: Props) => {
   return (
-    <Template>
+    <Main>
       <TextSection>
         <H1>Hi! I'm David,</H1>
         <H2>
@@ -71,7 +71,7 @@ export const Home = (props: Props) => {
         </H2>
       </TextSection>
       <StyledBrandLinks></StyledBrandLinks>
-    </Template>
+    </Main>
   );
 };
 

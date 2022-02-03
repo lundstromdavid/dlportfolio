@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { AppTemplate } from "../../components/layout/AppTemplate";
+import { AppMain } from "../../components/layout/AppMain";
 import { EducationSection } from "./EducationSection";
 import { ExperienceSection } from "./ExperienceSection";
 import { SkillSection } from "./SkillSection";
@@ -31,7 +31,7 @@ interface Props {
   className?: string;
 }
 
-const Template = styled(AppTemplate)`
+const Main = styled(AppMain)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,11 +47,11 @@ const Template = styled(AppTemplate)`
 
 export const Portfolio = (props: Props) => {
   return (
-    <Template>
+    <Main>
       <ExperienceSection />
       <SkillSection />
       <EducationSection />
-    </Template>
+    </Main>
   );
 };
 
