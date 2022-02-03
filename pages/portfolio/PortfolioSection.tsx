@@ -24,6 +24,7 @@ const Main = styled(motion.main)`
   max-width: 100%;
   border-radius: 0.5rem;
   height: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 `;
 
 const List = styled.ul``;
