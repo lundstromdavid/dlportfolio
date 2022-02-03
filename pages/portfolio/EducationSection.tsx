@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { AppLink } from "../../components/link/AppLink";
 import { PortfolioSection } from "./PortfolioSection";
+import { SiNextdotjs } from "react-icons/si";
 
 interface Props {
   className?: string;
@@ -22,6 +23,7 @@ const Item = styled.li`
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.5rem;
+  min-height: 150px;
   grid-template-rows: 1fr auto 1fr;
   grid-template-areas:
     "header"
@@ -35,7 +37,7 @@ const Item = styled.li`
   }
 
   @media screen and (min-width: 1200px) {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 150px 1fr;
     grid-template-areas:
       "logo header"
       "logo subheader"
@@ -69,6 +71,11 @@ const StyledLink = styled.a`
   margin-bottom: auto;
 `;
 
+const NextIcon = styled(SiNextdotjs)`
+  grid-area: logo;
+  margin: auto;
+`;
+
 export const EducationSection = (props: Props) => {
   return (
     <PortfolioSection
@@ -96,6 +103,27 @@ export const EducationSection = (props: Props) => {
         <Description>
           Learning about the four Cs of UX: consistency, continuity, context,
           and complementary.
+        </Description>
+      </Item>
+      <Item>
+        <NextIcon size={100}></NextIcon>
+        <Heading>
+          <StyledLink
+            href="https://fireship.io/courses/react-next-firebase/"
+            target="_blank"
+          >
+            Next.js Firebase Full Course
+          </StyledLink>
+        </Heading>
+        <SubHeading>
+          <StyledLink href="https://fireship.io/" target="_blank">
+            fireship,
+          </StyledLink>{" "}
+          <Time>2022 - present</Time>
+        </SubHeading>
+        <Description>
+          Learning about SEO and best-practices in server-side rendering with
+          Next.js framework
         </Description>
       </Item>
       <Item>
