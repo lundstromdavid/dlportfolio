@@ -35,7 +35,7 @@ const Template = styled(AppTemplate)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5vw;
+  gap: 1rem;
   padding: 2vw;
 
   @media screen and (min-width: 1600px) {
