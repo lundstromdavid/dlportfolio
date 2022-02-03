@@ -22,10 +22,12 @@ const Item = styled.li`
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.5rem;
-  grid-template-rows: auto auto;
+  grid-template-rows: 1fr auto 1fr;
   grid-template-areas:
     "header"
-    "subheader";
+    "subheader"
+    "description";
+
   padding: 0.5rem 0;
 
   &:not(:first-child) {
@@ -36,7 +38,8 @@ const Item = styled.li`
     grid-template-columns: auto 1fr;
     grid-template-areas:
       "logo header"
-      "logo subheader";
+      "logo subheader"
+      "logo description";
   }
 `;
 
@@ -53,6 +56,11 @@ const SubHeading = styled.h4`
 `;
 const Time = styled.span`
   font-style: italic;
+`;
+
+const Description = styled.p`
+  grid-area: description;
+  margin-bottom: auto;
 `;
 
 const StyledLink = styled.a`
@@ -85,6 +93,10 @@ export const EducationSection = (props: Props) => {
           </StyledLink>{" "}
           <Time>2022 - present</Time>
         </SubHeading>
+        <Description>
+          Learning about the four Cs of UX: consistency, continuity, context,
+          and complementary.
+        </Description>
       </Item>
       <Item>
         <Logo src="logo/uu.png" width={150} height={150} />
@@ -95,6 +107,15 @@ export const EducationSection = (props: Props) => {
           </StyledLink>
           <Time>2020 - 2022</Time>
         </SubHeading>
+        <Description>
+          The first half of the{" "}
+          <StyledLink
+            href="https://www.uu.se/en/admissions/master/selma/program/?pKod=TDV1K"
+            target="_blank"
+          >
+            Bachelor's Programme in Computer Science
+          </StyledLink>
+        </Description>
       </Item>
     </PortfolioSection>
   );
