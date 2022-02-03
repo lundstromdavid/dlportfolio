@@ -1,10 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { AppFooter } from "../../components/layout/AppFooter";
-import { AppHeader } from "../../components/layout/AppHeader";
-import { AppMain } from "../../components/layout/AppMain";
 import { AppTemplate } from "../../components/layout/AppTemplate";
-import { useScreenSize } from "../../hooks/MediaHooks";
 import { EducationSection } from "./EducationSection";
 import { ExperienceSection } from "./ExperienceSection";
 import { SkillSection } from "./SkillSection";
@@ -42,7 +38,7 @@ const Template = styled(AppTemplate)`
   gap: 5vw;
   padding: 2vw;
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1600px) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: flex-start;

@@ -72,8 +72,13 @@ const StyledLink = styled.a`
 `;
 
 const NextIcon = styled(SiNextdotjs)`
+  display: none;
   grid-area: logo;
   margin: auto;
+
+  @media screen and (min-width: 1200px) {
+    display: initial;
+  }
 `;
 
 export const EducationSection = (props: Props) => {
@@ -122,8 +127,8 @@ export const EducationSection = (props: Props) => {
           <Time>2022 - present</Time>
         </SubHeading>
         <Description>
-          Learning about SEO and best-practices in server-side rendering with
-          Next.js framework
+          Learning about SEO and best practices in server-side rendering using
+          the Next.js framework
         </Description>
       </Item>
       <Item>

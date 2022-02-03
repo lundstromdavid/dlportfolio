@@ -3,14 +3,16 @@ import React from "react";
 import styled from "styled-components";
 
 const Root = styled(motion.section)`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr;
   gap: 1rem;
   width: 100%;
+  height: 80%;
+  max-width: 700px;
 `;
 
 const Header = styled.header`
-  padding: 0 3vw;
+  padding: 0 min(3vw, 20px);
 `;
 
 const H2 = styled(motion.h2)`
@@ -21,6 +23,7 @@ const Main = styled(motion.main)`
   padding: 2vw;
   max-width: 100%;
   border-radius: 0.5rem;
+  height: 100%;
 `;
 
 const List = styled.ul``;
