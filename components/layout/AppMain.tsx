@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
 
@@ -9,10 +8,6 @@ const Root = styled(motion.main)`
   width: 100%;
   height: 100%;
   overflow-y: auto;
-
-  /* @media screen and (orientation: landscape) and (max-width: 1200px) {
-    height: 90%;
-  } */
 `;
 
 interface Props {

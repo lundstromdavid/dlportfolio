@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from "react";
+import React, { ReactType } from "react";
 import styled from "styled-components";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
@@ -35,34 +35,34 @@ interface Props extends HTMLMotionProps<"aside"> {
 }
 
 export const BrandLinks = (props: Props) => {
+  const color = "#000000";
+
+  const LocalLink = (props: { children: React.ReactNode; href: string }) => (
+    <StyledLink href={props.href} external target="_blank" color={color}>
+      {props.children}
+    </StyledLink>
+  );
+
   return (
     <Root {...props}>
       <List>
         <Item>
-          <StyledLink
-            href="https://github.com/lundstromdavid"
-            external
-            target="_blank"
-          >
+          <LocalLink href="https://github.com/lundstromdavid">
             <FaGithub size={40} />
             GitHub
-          </StyledLink>
+          </LocalLink>
         </Item>
         <Item>
-          <StyledLink
-            href="https://www.linkedin.com/in/david-lundstr%C3%B6m-53b863229/"
-            external
-            target="_blank"
-          >
+          <LocalLink href="https://www.linkedin.com/in/david-lundstr%C3%B6m-53b863229/">
             <FaLinkedin size={40} />
             LinkedIn
-          </StyledLink>
+          </LocalLink>
         </Item>
         <Item>
-          <StyledLink href="mailto:david@lundstrom.eu" external target="_blank">
+          <LocalLink href="mailto:david@lundstrom.eu">
             <IoMdMail size={40} />
             david@lundstrom.eu
-          </StyledLink>
+          </LocalLink>
         </Item>
       </List>
     </Root>

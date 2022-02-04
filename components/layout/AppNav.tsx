@@ -8,16 +8,12 @@ import { LoadingIndicator } from "../LoadingIndicator";
 
 const Root = styled(motion.nav)`
   display: flex;
-  gap: min(12vw, 75px);
+  gap: min(12vmin, 75px);
   padding: 0 2vw;
-
-  @media screen and (orientation: landscape) and (max-width: 1200px) {
-    gap: min(12vh, 75px);
-  }
 `;
 
 const StyledLoadingIndicator = styled(LoadingIndicator)`
-  margin: auto 0;
+  margin-top: 0.5rem;
 `;
 
 interface Props {
@@ -29,14 +25,21 @@ export const AppNav = (props: Props) => {
   const iconSize = 28;
 
   const navRef = useRef<HTMLElement | null>(null);
+  const latestNavWidth = useRef<number>(0);
+
+  useEffect(() => {
+    if (navRef.current) {
+      latestNavWidth.current = navRef.current.clientWidth;
+    }
+  });
 
   return (
     <AnimatePresence initial={false} exitBeforeEnter>
       {routeLoading ? (
         <StyledLoadingIndicator
           key="loading"
-          initial={{ opacity: 0, width: navRef.current?.clientWidth || "auto" }}
-          animate={{ opacity: 1, width: navRef.current?.clientWidth || "auto" }}
+          initial={{ opacity: 0, width: latestNavWidth.current || "auto" }}
+          animate={{ opacity: 1, width: latestNavWidth.current || "auto" }}
           exit={{ opacity: 0 }}
         />
       ) : (

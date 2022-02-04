@@ -82,8 +82,8 @@ body {
 
 @media screen and (min-width: 1200px) {
   body {
-    background-image: url("../public/layered-waves-top.svg"),
-      url("../public/layered-waves-bottom.svg");
+    background-image: url("../public/layered-waves-top.svg");
+    /*  url("../public/layered-waves-bottom.svg"); */
     background-size: cover;
   }
 }

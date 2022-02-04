@@ -25,7 +25,7 @@ const Main = styled(AppMain)`
   @media screen and (min-width: 1200px) {
     grid-template-columns: 1fr 1fr;
     background-image: url("man-under-tree.svg");
-    background-size: 30%;
+    background-size: 40%;
     background-position: 85%;
   }
 `;

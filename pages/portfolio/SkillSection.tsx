@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Skills from "../../data/Skill";
+import Skills from "../../data/Skills";
 import { PortfolioSection } from "./PortfolioSection";
 
 const SkillList = styled.ol`
@@ -35,11 +35,11 @@ export const SkillSection = (props: Props) => {
       title="Skills"
       titleColor="#c01450"
       background="#c0145060"
-      index={1}
+      index={2}
     >
       <SkillList>
         {Skills.map((skill) => (
-          <SkillItem>
+          <SkillItem key={skill.name}>
             {skill.icon}
             <SkillName>{skill.name}</SkillName>
             <SkillRating>{skill.proficiency}/10</SkillRating>

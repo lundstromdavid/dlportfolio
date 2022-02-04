@@ -24,6 +24,7 @@ const Root = styled(motion.a)`
 interface Props extends HTMLMotionProps<"a"> {
   external?: boolean;
   className?: string;
+  color?: string;
 }
 
 export const AppLink: React.FC<Props> = (props) => {
@@ -37,7 +38,7 @@ export const AppLink: React.FC<Props> = (props) => {
     }
   };
 
-  const { external, ...rest } = props;
+  const { external, color, ...rest } = props;
 
   const isCurrent = () => pathname === props.href;
 
@@ -63,7 +64,10 @@ export const AppLink: React.FC<Props> = (props) => {
           }}
           animate={{
             opacity: isCurrentOrExternal() ? 1 : 0.6,
-            color: isCurrent() && !props.external ? "var(--text-red)" : "",
+            color:
+              isCurrent() && !props.external
+                ? "var(--text-red)"
+                : color || "#ffffff",
           }}
           whileTap={{ scale: 0.75 }}
         >

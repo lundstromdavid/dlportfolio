@@ -19,7 +19,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       <AnimatePresence exitBeforeEnter initial={false}>
         <Component key={pathname} {...pageProps} />;
       </AnimatePresence>
-      {screen === Screen.smallScreenLandscape ? <AppSidebar /> : <AppFooter />}
+      {screen === Screen.smallScreenLandscape && <AppSidebar />}
+      {screen === Screen.smallScreenPortrait && <AppFooter />}
     </>
   );
 }

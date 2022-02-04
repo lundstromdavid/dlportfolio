@@ -49,8 +49,8 @@ export const Portfolio = (props: Props) => {
   return (
     <Main>
       <ExperienceSection />
-      <SkillSection />
       <EducationSection />
+      <SkillSection />
     </Main>
   );
 };

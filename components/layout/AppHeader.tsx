@@ -2,18 +2,18 @@ import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
 import { Screen } from "../../media/Screen";
-import { Avatar } from "../Avatar";
 import { AppNav } from "./AppNav";
 
 const Root = styled(motion.header)`
   grid-area: app-header;
   display: flex;
   justify-content: flex-end;
+  align-items: flex-start;
 
   width: 100%;
   height: clamp(80px, 18vw, 210px);
-  padding: 1vw;
-  padding-right: 28vw;
+  padding-top: 2rem;
+  padding-right: 10vw;
 
   @media screen and (max-width: 1200px) {
     background: var(--dark-blue);

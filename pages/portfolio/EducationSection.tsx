@@ -87,7 +87,7 @@ export const EducationSection = (props: Props) => {
       title="Education"
       titleColor="#849d8c"
       background="#849d8c60"
-      index={2}
+      index={1}
     >
       <Item>
         <Logo src="logo/coursera.png" width={150} height={150} />
@@ -96,7 +96,7 @@ export const EducationSection = (props: Props) => {
             href="https://www.coursera.org/learn/foundations-user-experience-design"
             target="_blank"
           >
-            Foundations of User Experience (UX) Design
+            Foundations of UX Design
           </StyledLink>
         </Heading>
         <SubHeading>
